@@ -1,0 +1,16 @@
+// @import url(""); Imports de URL no css são mais lentos do que no html
+@import "base";
+@import "header";
+@import "button";
+@import "cards";
+@import "form";
+@import "hero";
+@import "modal";
+@import "responsive";
+
+/*===============
+MAIN
+==================*/
+main {
+  margin-bottom: 80px;
+}

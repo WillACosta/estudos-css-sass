@@ -1,0 +1,54 @@
+:root { font-size: 16px; font-family: "Open Sans"; }
+
+* { margin: 0; padding: 0; }
+
+body { color: black; background-color: white; }
+
+body::-webkit-scrollbar { width: 0.25rem; }
+
+body::-webkit-scrollbar-thumb { background-color: #6649b8; }
+
+main { margin-left: 5rem; padding: 0 1rem; }
+
+.navbar { position: fixed; background-color: #23232e; -webkit-transition: width 200ms ease; transition: width 200ms ease; }
+
+.navbar-nav { list-style: none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; }
+
+.nav-item { width: 100%; }
+
+.nav-item:last-child { margin-top: auto; }
+
+.nav-link { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 5rem; color: #b6b6b6; text-decoration: none; -webkit-filter: grayscale(100%) opacity(0.7); filter: grayscale(100%) opacity(0.7); -webkit-transition: 200ms; transition: 200ms; }
+
+.nav-link:hover { -webkit-filter: grayscale(0%) opacity(1); filter: grayscale(0%) opacity(1); background-color: #141418; }
+
+.nav-link svg { min-width: 2rem; margin: 0 1.5rem; }
+
+.navbar:hover { width: 16rem; }
+
+.navbar:hover svg { width: 2rem; }
+
+.link-text { display: none; margin-left: 1rem; }
+
+.navbar:hover .link-text { display: block; }
+
+.fa-primary { color: #df49a6; }
+
+.fa-primary, .fa-secondary { -webkit-transition: 200ms; transition: 200ms; }
+
+.logo { font-weight: bold; text-transform: uppercase; margin-bottom: 1rem; text-align: center; color: #ececec; background: #141418; letter-spacing: 0.3ch; width: 100%; }
+
+.logo svg { -webkit-transform: rotate(0deg); transform: rotate(0deg); -webkit-transition: 200ms; transition: 200ms; }
+
+.navbar:hover .logo svg { -webkit-transform: rotate(-180deg); transform: rotate(-180deg); -webkit-transition: 200ms; transition: 200ms; }
+
+@media only screen and (max-width: 600px) { .navbar { bottom: 0; width: 100vw; height: 5rem; }
+  .logo { display: none; }
+  .navbar-nav { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
+  .nav-link { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  main { margin: 0; } }
+
+@media only screen and (min-width: 600px) { .navbar { top: 0; width: 5rem; height: 100vh; }
+  .navbar:hover { width: 16rem; }
+  .navbar:hover .link-text { display: inline; -webkit-transition: opacity 200ms; transition: opacity 200ms; } }
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,19 @@
+header,
+form,
+.hero {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cards {
+    display: block
+}
+
+.card {
+    border: bottom 1px solid;
+}
+
+.text--medium {
+    color: #000;
+}

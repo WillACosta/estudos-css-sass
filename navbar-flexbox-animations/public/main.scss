@@ -1,0 +1,168 @@
+$text__primary: #b6b6b6;
+$text__secondary: #ececec;
+$bg__primary: #23232e;
+$bg__secondary: #141418;
+
+$transition--speed: 200ms;
+
+:root {
+    font-size: 16px;
+    font-family: "Open Sans";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    // box-sizing: border-box;
+}
+
+body {
+    color: black;
+    background-color: white;
+}
+
+// Custom Scrollbar
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #6649b8;
+}
+
+main {
+    margin-left: 5rem;
+    padding: 0 1rem;
+}
+
+.navbar {
+    // width: 5rem;
+    // height: 100vh;
+    position: fixed;
+    background-color: $bg__primary;
+
+    transition: width 200ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: $text__primary;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: $transition--speed;
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background-color: $bg__secondary;
+}
+
+.nav-link svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.navbar:hover {
+    width: 16rem;
+}
+
+.navbar:hover svg {
+    width: 2rem;
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.navbar:hover .link-text {
+    display: block;
+}
+
+.fa-primary {
+    color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+    transition: $transition--speed;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: $text__secondary;
+    background: $bg__secondary;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.logo svg {
+    transform: rotate(0deg);
+    transition: $transition--speed;
+}
+
+.navbar:hover .logo svg {
+    transform: rotate(-180deg);
+    transition: $transition--speed;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text {
+        display: inline;
+        transition: opacity $transition--speed;
+    }
+}

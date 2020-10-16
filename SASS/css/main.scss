@@ -1,0 +1,81 @@
+@import "base";
+
+$text-color: #ededed;
+
+/**
+    Agrupamento de CSS para ser reusado em demais locais
+**/
+@mixin box-shadow($color) {
+  box-shadow: 2px 2px 4px -2px rgba($color, 0.6);
+}
+
+// Podemos fazer verificações
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  } @else if $val == alert {
+    color: yellow;
+  } @else {
+    color: black;
+  }
+}
+
+body {
+  background-color: #7159c1;
+  color: $text-color;
+}
+
+.container {
+  @include box-shadow(rgba(0, 0, 0, 0.5)); // Importar o mixin
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  color: $text-color;
+
+  p {
+    color: black;
+    @include text-effect(none);
+  }
+}
+
+// Laço de repetição 'to' Não inclui o último 'through' inclui o último
+@for $i from 1 through 4 {
+  .text-#{$i} {
+    font-size: 5px * $i;
+  }
+}
+
+// Criar um array
+$colors: (
+  color: blue,
+  color2: green,
+  color3: black,
+);
+
+// Laço for each : Chave & Valor
+@each $key, $color in $colors {
+  .#{$color}-text {
+    color: darken($color, $amount: 10);
+  }
+}
+
+// Centralizar elemento com Flex
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Herança
+body {
+  @extend .flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+p {
+  &:hover {
+    cursor: pointer;
+    color: #99cc00;
+  }
+}
